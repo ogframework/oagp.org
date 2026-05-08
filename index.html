@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OAGP — The Open Agentic Governance Pattern</title>
+  <title>OAGP — Structured Open Governance for AI Organizations</title>
   <style>
     :root {
       --accent: #22d3ee;
@@ -19,12 +19,15 @@
       display: flex; flex-direction: column; align-items: center;
       min-height: 100vh; padding: 4rem 2rem;
     }
-    .container { max-width: 720px; width: 100%; }
-    h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .container { max-width: 760px; width: 100%; }
+    .eyebrow { color: var(--accent); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.5rem; }
+    h1 { font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem; line-height: 1.1; }
     h1 span { color: var(--accent); }
-    .tagline { color: #8b949e; font-size: 1.2rem; margin-bottom: 2rem; }
-    .description { line-height: 1.7; margin-bottom: 2rem; color: #c9d1d9; }
-    .description em { color: #e6edf3; font-style: normal; font-weight: 600; }
+    .tagline { color: #8b949e; font-size: 1.25rem; margin-bottom: 2.5rem; }
+    .hero p { line-height: 1.7; color: #c9d1d9; font-size: 1.05rem; margin-bottom: 1rem; }
+    .hero .lede { color: #e6edf3; font-size: 1.15rem; font-weight: 500; }
+    .hero strong { color: #e6edf3; font-weight: 600; }
+    .hero { margin-bottom: 3rem; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
     .links { display: flex; gap: 1.5rem; margin-bottom: 3rem; flex-wrap: wrap; font-size: 0.9rem; }
@@ -32,11 +35,11 @@
     @media (max-width: 600px) { .pitch { grid-template-columns: 1fr; } }
     .card {
       background: #161b22; border: 1px solid #30363d; border-radius: 8px;
-      padding: 1.25rem; transition: border-color 0.2s;
+      padding: 1.25rem; transition: border-color 0.2s, transform 0.2s;
       display: block; color: inherit;
     }
-    .card:hover { text-decoration: none; }
-    .card h3 { font-size: 1.05rem; margin-bottom: 0.25rem; }
+    .card:hover { text-decoration: none; transform: translateY(-2px); }
+    .card h3 { font-size: 1.1rem; margin-bottom: 0.25rem; }
     .card .domain { color: #8b949e; font-size: 0.82rem; margin-bottom: 0.5rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
     .card p { color: #8b949e; font-size: 0.92rem; line-height: 1.55; }
     .card.catdef h3 { color: var(--catdef); }
@@ -47,14 +50,15 @@
     .card.orgdef:hover { border-color: var(--orgdef); }
     .card.memodef h3 { color: var(--memodef); }
     .card.memodef:hover { border-color: var(--memodef); }
-    .section { margin-bottom: 2rem; }
-    .section h2 { font-size: 1.1rem; color: #8b949e; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .section { margin-bottom: 2.5rem; }
+    .section h2 { font-size: 1.1rem; color: #8b949e; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
     .section p { color: #c9d1d9; line-height: 1.7; }
     .section p + p { margin-top: 0.75rem; }
+    .section strong { color: #e6edf3; }
     .stack {
       background: #161b22; border: 1px solid #30363d; border-radius: 8px;
       padding: 1rem 1.25rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 0.88rem; line-height: 1.7; color: #c9d1d9; margin-top: 0.75rem;
+      font-size: 0.88rem; line-height: 1.7; color: #c9d1d9; margin: 1rem 0;
     }
     .stack .layer { display: flex; gap: 0.75rem; align-items: baseline; }
     .stack .name { font-weight: 600; min-width: 7ch; }
@@ -63,6 +67,10 @@
     .stack .name.orgdef { color: var(--orgdef); }
     .stack .name.memodef { color: var(--memodef); }
     .stack .desc { color: #8b949e; }
+    .pillars { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; margin-top: 1rem; }
+    @media (max-width: 600px) { .pillars { grid-template-columns: 1fr; } }
+    .pillar h3 { color: var(--accent); font-size: 0.95rem; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .pillar p { color: #c9d1d9; font-size: 0.92rem; line-height: 1.6; }
     code { background: #161b22; padding: 0.2em 0.4em; border-radius: 3px; font-size: 0.9em; }
     .footer { margin-top: auto; padding-top: 3rem; color: #484f58; font-size: 0.85rem; display: flex; gap: 1rem; align-items: center; }
     .build-number { color: #30363d; font-size: 0.75rem; }
@@ -70,17 +78,29 @@
 </head>
 <body>
   <main class="container">
-    <h1><span>OAGP</span></h1>
-    <p class="tagline">The Open Agentic Governance Pattern.</p>
+    <header class="hero">
+      <div class="eyebrow">Open Agentic Governance Pattern</div>
+      <h1><span>OAGP</span></h1>
+      <p class="tagline">Structured open governance for AI organizations.</p>
 
-    <p class="description">
-      <strong>OAGP</strong> is a family of four interlocking open standards for describing
-      <em>governed, autonomous AI organizations</em> — the substrate they sit on, the roles
-      they contain, the org charts that compose those roles, and the memos that flow between
-      them. Each spec is portable, MIT-licensed, and validated by empirical conformance
-      evidence on real AI runtimes. No single vendor owns OAGP; implementations are equal
-      citizens.
-    </p>
+      <p class="lede">
+        Every meaningful AI deployment is already an organization. It has roles,
+        hand-offs between sessions, authority boundaries, and decisions someone
+        needs to be accountable for.
+      </p>
+      <p>
+        Today, that structure is captive — locked inside a vendor's product,
+        invisible to outside scrutiny, and lost the moment the model upgrades or
+        the team changes tools. The org chart is proprietary. The role
+        definitions don't travel. The decisions can't be audited.
+      </p>
+      <p>
+        <strong>OAGP is the open layer that fixes this.</strong> A four-spec family
+        that makes AI organizations <strong>portable</strong> across runtimes,
+        <strong>composable</strong> across teams, and <strong>accountable</strong>
+        to anyone who can read a git log.
+      </p>
+    </header>
 
     <div class="links">
       <a href="https://github.com/oagp-online">View on GitHub</a>
@@ -90,55 +110,71 @@
       <a class="card catdef" href="https://catdef.org">
         <h3>catdef</h3>
         <div class="domain">catdef.org</div>
-        <p>The substrate. An open standard for machine-enhanceable descriptors of real-world objects and the catalogs that organize them. Every other OAGP spec rides on catdef's <code>.openthing</code> and <code>.opencatalog</code> file formats.</p>
+        <p><strong>The substrate.</strong> One open file format for describing any object — and any catalog of objects. Every other OAGP spec rides on catdef's <code>.openthing</code> and <code>.opencatalog</code> files.</p>
       </a>
 
       <a class="card roledef" href="https://roledef.org">
         <h3>roledef</h3>
         <div class="domain">roledef.org</div>
-        <p>The role layer. A portable format for AI roles plus an empirical methodology for verifying they actually work across runtimes. Identity, voice, output contract, guardrails — captured as one <code>.openthing</code> file any compliant runtime can load.</p>
+        <p><strong>The role layer.</strong> A portable definition of a single AI role — identity, voice, output contract, guardrails. Any compliant runtime can load it; the role travels when the model does.</p>
       </a>
 
       <a class="card orgdef" href="https://orgdef.org">
         <h3>orgdef</h3>
         <div class="domain">orgdef.org</div>
-        <p>The structure layer. Defines positions, the relationships between them (reports-to, peer-of, derives-from, validates-for, …), and incumbents (human, AI session, vacant). Composes roledefs into a working organization.</p>
+        <p><strong>The structure layer.</strong> An org chart for AI: positions, relationships (reports-to, peer-of, validates-for, …), and incumbents. Authority is declared in the artifact, not implied by an API key.</p>
       </a>
 
       <a class="card memodef" href="https://memodef.org">
         <h3>memodef</h3>
         <div class="domain">memodef.org</div>
-        <p>The communication layer. Memos as catdef <code>.openthing</code> files committed to the recipient's working repo — POP-like by design. Content is sovereign, transport is swappable, the simplicity is the moat.</p>
+        <p><strong>The communication layer.</strong> Memos as files committed to the recipient's working repo. Every AI-to-AI hand-off is a git commit. <code>git blame</code> any decision the organization made.</p>
       </a>
     </div>
 
     <section class="section">
-      <h2>How the layers fit together</h2>
-      <p>Each spec is independently useful, but they're designed to compose:</p>
+      <h2>How the layers compose</h2>
       <div class="stack">
         <div class="layer"><span class="name memodef">memodef</span><span class="desc">→ memos flow between positions</span></div>
         <div class="layer"><span class="name orgdef">orgdef</span><span class="desc">→ positions are seats in an org chart</span></div>
         <div class="layer"><span class="name roledef">roledef</span><span class="desc">→ each position references a role definition</span></div>
         <div class="layer"><span class="name catdef">catdef</span><span class="desc">→ everything serializes as a catdef artifact</span></div>
       </div>
-      <p>You can use catdef on its own to catalog anything. You can use roledef on its own to instantiate a single AI role. orgdef and memodef require their layer below — but every layer is optional from above. Take only what you need.</p>
+      <p>Each spec is independently useful. catdef alone catalogs anything. roledef alone instantiates a portable role. orgdef and memodef build on the layers below — but every layer is optional from above. Take only what you need.</p>
     </section>
 
     <section class="section">
-      <h2>Why "Open Agentic Governance"</h2>
-      <p><em style="font-style: italic;">Open</em> — MIT-licensed; anyone can publish their own roledef, orgdef, or memodef library at any URL using the same format; no vendor lock-in.</p>
-      <p><em style="font-style: italic;">Agentic</em> — the primary readers and writers of OAGP artifacts are AI sessions. Human-legibility is preserved (markdown, JSON, scannable filenames), but machine-legibility is the load-bearing optimization.</p>
-      <p><em style="font-style: italic;">Governance</em> — the specs describe <strong>authority structure</strong>, not task tracking. Who has the authority to do what, who reports to whom, which roles validate which contributions. The substrate of an organization, not its workflow engine.</p>
+      <h2>Three claims OAGP makes</h2>
+      <div class="pillars">
+        <div class="pillar">
+          <h3>Structured</h3>
+          <p>The layers are explicit. Roles, positions, relationships, memos — each has a schema, a conformance suite, and reference fixtures. Nothing is left to tribal knowledge.</p>
+        </div>
+        <div class="pillar">
+          <h3>Open</h3>
+          <p>MIT-licensed; no vendor owns any spec; anyone can publish a library at any URL. The conformance suite <em>is</em> the standard. Implementations are equal citizens.</p>
+        </div>
+        <div class="pillar">
+          <h3>Empirical</h3>
+          <p>Every methodology rule was derived from observed runtime behavior, not theoretical design. The library carries documented conformance evidence on real models. Falsifiable, not aspirational.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Why now</h2>
+      <p>Every major AI vendor is shipping its own proprietary constructs for teams, agents, and projects. If the open layer doesn't exist before those patterns harden, AI organizations will look like the AOL era of online services instead of the web era. The window for an open structural layer is open today and shrinking.</p>
+      <p>Email, the web, and schema.org all became infrastructure because they were open. No vendor owned the structural layer; implementations were equal citizens; conformance was the spec. The structural layer of AI deserves — and needs — the same.</p>
     </section>
 
     <section class="section">
       <h2>Status</h2>
-      <p>All four specs are live with canonical libraries, conformance fixtures, and reference implementations. catdef is at v1.4; roledef, orgdef, and memodef are pre-1.0 but stable enough to derive real artifacts against. Renamed from AIGP to OAGP on 2026-05-01.</p>
+      <p>All four specs are live with canonical libraries, conformance fixtures, and reference implementations on real AI runtimes. catdef is at v1.4; roledef, orgdef, and memodef are pre-1.0 but stable enough to derive real artifacts against. Renamed from AIGP to OAGP on 2026-05-01.</p>
     </section>
   </main>
   <footer class="footer">
     <span>OAGP is an open standard family, licensed under MIT.</span>
-    <span class="build-number">build 001</span>
+    <span class="build-number">build 002</span>
   </footer>
 </body>
 </html>
