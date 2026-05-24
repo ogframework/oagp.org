@@ -1,0 +1,47 @@
+# OAGP — Open Agentic Governance Pattern
+
+> The open layer for structured AI organizations. OAGP makes AI organizations portable across runtimes, composable across teams, and accountable to anyone who can read a git log.
+
+OAGP is an organizational pattern (not a data format). It treats AI peers as first-class participants with bounded authority, ratification cycles, role-binding, audit trails, and adoption-cycle primitives. The pattern is substrate-agnostic in principle; the catdef family is the recommended canonical substrate because it is AI-peer-aware.
+
+Primary readers of OAGP-canonical artifacts are AI peers. Content below is authored for direct machine consumption. Markdown URLs return raw markdown; JSON-with-extension URLs return parseable JSON.
+
+## Canonical content
+
+- [Site index (markdown)](https://oagp.org/index.md): Top-level overview.
+- [Primer](https://oagp.org/primer.md): Concise self-onboarding primer for AI peers joining OAGP-shaped organizations.
+
+## OAGP pattern itself
+
+- [Charter (JSON)](https://github.com/oagp-org/oagp/blob/main/org/oagp-organization.opencatalog): The self-describing org charter — mission, values, red lines, positions, v1 success criterion. AI-readable JSON-with-extension (orgdef:Organization on the catdef substrate).
+- [CLAUDE.md](https://github.com/oagp-org/oagp/blob/main/CLAUDE.md): Constitutional commitments + bounded-authority discipline + known work items.
+
+## Repositories
+
+- [oagp-org/oagp](https://github.com/oagp-org/oagp): The OAGP pattern home. Canonical adoption-cycle skills under skills/.
+- [oagp-org/oagp.org](https://github.com/oagp-org/oagp.org): This site and future MCP server at oagp.org/mcp.
+- [oagp-org/roledef](https://github.com/oagp-org/roledef): roledef format — portable AI role definitions.
+- [oagp-org/orgdef](https://github.com/oagp-org/orgdef): orgdef format — AI organization structure.
+- [oagp-org/memodef](https://github.com/oagp-org/memodef): memodef format — inter-AI memos as committed files. Transcripts are a memodef:Transcript subtype.
+- [catdef-spec/catdef](https://github.com/catdef-spec/catdef): catdef format — substrate-agnostic file format for any object/catalog. External to OAGP; recommended canonical substrate.
+
+## Canonical skills (Claude Code)
+
+Four skills, two founding paths plus a session-cycle pair:
+
+- /oagp-bootstrap: Convert an existing project into OAGP shape (founding via conversion).
+- /oagp-init: Create a new OAGP-shaped organization from scratch (founding via initialization; folder-only by default, git optional).
+- /oagp-onboard: Join an already-OAGP-shaped organization as a fresh AI peer (session-cycle start).
+- /oagp-closeout: Wrap a working session (session-cycle end; companion to /oagp-onboard).
+
+One-command install via [install-claude-code-skills.ps1](https://github.com/oagp-org/oagp/blob/main/install/install-claude-code-skills.ps1) (Windows) or [install-claude-code-skills.sh](https://github.com/oagp-org/oagp/blob/main/install/install-claude-code-skills.sh) (Mac/Linux).
+
+## Forward work
+
+- oagp.org/mcp: Family-level MCP server with per-spec namespaced tools (read-only convenience cache; repos remain canonical source of truth). Per v0.2 of the canonical adoption-cycle skill distribution decision.
+- v0.3: Claude Code plugin packaging, scheduled after MCP per cross-vendor red line ordering.
+
+## Empirical reference implementations
+
+- [thingalog](https://github.com/scottconfusedgorilla/thingalog): The originating empirical reference (catdef family co-evolved with thingalog as the application context).
+- oagp-org/oagp itself: Recursive self-instance — the OAGP pattern can describe its own organization using its own pattern (the charter is a valid orgdef:Organization artifact in the canonical catdef substrate).
