@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="alternate" type="text/markdown" href="/index.md">
-  <title>OAGP — Structured Open Governance for AI Organizations</title>
+  <title>OG — Structured Open Governance for AI Organizations</title>
   <style>
     :root {
       --accent: #22d3ee;
@@ -91,6 +91,7 @@
     }
     .skill code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--accent); font-size: 0.9rem; display: block; margin-bottom: 0.4rem; }
     .skill p { color: #8b949e; font-size: 0.88rem; line-height: 1.5; }
+    .skill .cat { color: #6e7681; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
     .engage-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.92rem; }
     .engage-table th, .engage-table td { text-align: left; padding: 0.75rem; border-bottom: 1px solid #30363d; vertical-align: top; }
     .engage-table th { color: #8b949e; font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; }
@@ -104,8 +105,8 @@
 <body>
   <main class="container">
     <header class="hero">
-      <div class="eyebrow">Open Agentic Governance Pattern</div>
-      <h1><span>OAGP</span></h1>
+      <div class="eyebrow">Open Governance Framework</div>
+      <h1><span>OG</span></h1>
       <p class="tagline">Structured open governance for AI organizations.</p>
 
       <p class="lede">
@@ -120,29 +121,30 @@
         definitions don't travel. The decisions can't be audited.
       </p>
       <p>
-        <strong>OAGP is the open layer that fixes this.</strong> OAGP is an
-        <strong>organizational pattern</strong> — not a data format — that makes
+        <strong>OG is the open layer that fixes this.</strong> OG is an
+        <strong>organizational framework</strong> — not a data format — that makes
         AI organizations <strong>portable</strong> across runtimes,
         <strong>composable</strong> across teams, and
-        <strong>accountable</strong> to anyone who can read a git log. OAGP
+        <strong>accountable</strong> to anyone who can read a git log. OG
         treats AI peers as first-class participants with bounded authority,
-        ratification cycles, role-binding, and audit trails.
+        ratification cycles, role-binding, and audit trails. <em>OG = Open
+        Governance; current scope is agentic (AI-inclusive) organizations.</em>
       </p>
     </header>
 
     <nav class="links" aria-label="Primary">
-      <a href="https://github.com/oagp-org">View on GitHub</a>
-      <a href="https://github.com/oagp-org/oagp/blob/main/org/oagp-organization.opencatalog">Charter (JSON)</a>
-      <a href="https://github.com/oagp-org/oagp/blob/main/CLAUDE.md">Onboarding discipline</a>
+      <a href="https://github.com/ogframework">View on GitHub</a>
+      <a href="https://github.com/ogframework/og/blob/main/org/oagp-organization.opencatalog">Charter (JSON)</a>
+      <a href="https://github.com/ogframework/og/blob/main/CLAUDE.md">Operating discipline</a>
       <a href="/primer.md">Primer</a>
       <a href="/llms.txt">llms.txt</a>
     </nav>
 
     <section class="section">
       <h2>The substrate stack</h2>
-      <p>OAGP-the-pattern is conceptually separable from any specific data substrate. The catdef family is the <strong>recommended canonical</strong> substrate because it is AI-peer-aware (schema-as-data; AI-readable opencatalog format) — but OAGP could be carried on other substrates in principle.</p>
+      <p>OG-the-framework is conceptually separable from any specific data substrate. The catdef family is the <strong>recommended canonical</strong> substrate because it is AI-peer-aware (schema-as-data; AI-readable opencatalog format) — but OG could be carried on other substrates in principle. OG also composes <strong>over</strong> runtime orchestration/policy primitives — it is the cross-session organizational-governance layer, not a runtime.</p>
       <div class="stack" aria-label="Substrate stack diagram">
-        <div class="layer"><span class="name oagp">OAGP</span><span class="desc">→ the organizational pattern (this site)</span></div>
+        <div class="layer"><span class="name oagp">OG</span><span class="desc">→ the organizational framework (this site)</span></div>
         <div class="layer"><span class="divider">───────────────────────────────────────────</span></div>
         <div class="layer"><span class="name memodef">memodef</span><span class="desc">→ memos between positions (transcripts as subtype)</span></div>
         <div class="layer"><span class="name orgdef">orgdef</span><span class="desc">→ positions in an org chart</span></div>
@@ -150,18 +152,18 @@
         <div class="layer"><span class="divider">───────────────────────────────────────────</span></div>
         <div class="layer"><span class="name catdef">catdef</span><span class="desc">→ recommended substrate (external; AI-peer-aware)</span></div>
       </div>
-      <p>Three of these — roledef, orgdef, memodef — are OAGP-internal. catdef is an external, substrate-agnostic data spec; OAGP recommends it but does not require it.</p>
+      <p>Three of these — roledef, orgdef, memodef — are OG-internal. catdef is an external, substrate-agnostic data spec; OG recommends it but does not require it.</p>
     </section>
 
     <section class="section">
-      <h2>OAGP itself</h2>
-      <p>The OAGP pattern is described by its own self-describing artifacts — readable directly by AI peers:</p>
+      <h2>OG itself</h2>
+      <p>The OG framework is described by its own self-describing artifacts — readable directly by AI peers:</p>
       <ul>
-        <li><strong><a href="https://github.com/oagp-org/oagp/blob/main/org/oagp-organization.opencatalog">Charter (JSON)</a></strong> — <code>orgdef:Organization</code> on the catdef substrate. Mission, values, red lines, positions, v1 success criterion. The pattern can describe itself using itself.</li>
-        <li><strong><a href="https://github.com/oagp-org/oagp/blob/main/CLAUDE.md">CLAUDE.md</a></strong> — constitutional commitments and bounded-authority discipline.</li>
-        <li><strong><a href="https://github.com/oagp-org/oagp/tree/main/decisions">Decisions</a></strong> — ratified architectural commitments.</li>
-        <li><strong><a href="https://github.com/oagp-org/oagp/tree/main/memos">Memos</a></strong> — inter-position communication archive (git-blameable institutional memory).</li>
-        <li><strong><a href="https://github.com/oagp-org/oagp/tree/main/proposals">Proposals</a></strong> — pending architectural proposals.</li>
+        <li><strong><a href="https://github.com/ogframework/og/blob/main/org/oagp-organization.opencatalog">Charter (JSON)</a></strong> — <code>orgdef:Organization</code> on the catdef substrate. Mission, values, red lines, positions, recommended_patterns, v1 success criterion. The framework can describe itself using itself.</li>
+        <li><strong><a href="https://github.com/ogframework/og/blob/main/CLAUDE.md">CLAUDE.md</a></strong> — constitutional commitments and bounded-authority discipline.</li>
+        <li><strong><a href="https://github.com/ogframework/og/tree/main/decisions">Decisions</a></strong> — ratified commitments.</li>
+        <li><strong><a href="https://github.com/ogframework/og/tree/main/memos">Memos</a></strong> — inter-position communication archive (git-blameable institutional memory).</li>
+        <li><strong><a href="https://github.com/ogframework/og/tree/main/proposals">Proposals</a></strong> — pending proposals.</li>
       </ul>
     </section>
 
@@ -171,23 +173,23 @@
         <a class="card catdef wide" href="https://catdef.org">
           <h3>catdef <span class="badge substrate">recommended substrate</span></h3>
           <div class="domain">catdef.org — external</div>
-          <p>One open file format for describing any object — and any catalog of objects. OAGP rides catdef's <code>.openthing</code> and <code>.opencatalog</code> files; alternative substrates are permitted in principle.</p>
+          <p>One open file format for describing any object — and any catalog of objects. OG rides catdef's <code>.openthing</code> and <code>.opencatalog</code> files; alternative substrates are permitted in principle.</p>
         </a>
 
         <a class="card roledef" href="https://roledef.org">
-          <h3>roledef <span class="badge internal">OAGP-internal</span></h3>
+          <h3>roledef <span class="badge internal">OG-internal</span></h3>
           <div class="domain">roledef.org</div>
-          <p>A portable definition of a single AI role — identity, voice, output contract, guardrails. Any compliant runtime can load it; the role travels when the model does.</p>
+          <p>A portable definition of a single AI role — identity, voice, output contract, guardrails, recommended capabilities. Any compliant runtime can load it; the role travels when the model does.</p>
         </a>
 
         <a class="card orgdef" href="https://orgdef.org">
-          <h3>orgdef <span class="badge internal">OAGP-internal</span></h3>
+          <h3>orgdef <span class="badge internal">OG-internal</span></h3>
           <div class="domain">orgdef.org</div>
           <p>An org chart for AI: positions, relationships (reports-to, peer-of, validates-for, …), and incumbents. Authority is declared in the artifact, not implied by an API key.</p>
         </a>
 
         <a class="card memodef wide" href="https://memodef.org">
-          <h3>memodef <span class="badge internal">OAGP-internal</span></h3>
+          <h3>memodef <span class="badge internal">OG-internal</span></h3>
           <div class="domain">memodef.org</div>
           <p>Memos as files committed to the recipient's working repo. Every AI-to-AI hand-off is a git commit. <code>git blame</code> any decision the organization made. Transcripts are a <code>memodef:Transcript</code> subtype.</p>
         </a>
@@ -195,56 +197,74 @@
     </section>
 
     <section class="section">
-      <h2>Adoption cycle</h2>
-      <p>Four canonical Claude Code skills bracket the OAGP adoption lifecycle — two founding paths plus a session-cycle pair.</p>
+      <h2>Skills</h2>
+      <p>Seven canonical Claude Code skills bracket the OG lifecycle — three categories. The suite is the discoverable menu of canonical operations.</p>
       <div class="skills">
         <div class="skill">
-          <code>/oagp-bootstrap</code>
-          <p>Convert an existing project into OAGP shape. Founding via conversion.</p>
+          <span class="cat">Genesis</span>
+          <code>/og-adopt</code>
+          <p>Convert an existing project into OG shape.</p>
         </div>
         <div class="skill">
-          <code>/oagp-init</code>
-          <p>Create a new OAGP-shaped organization from scratch. Founding via initialization; folder-only by default, git optional.</p>
+          <span class="cat">Genesis</span>
+          <code>/og-create</code>
+          <p>Create a new OG-shaped organization from scratch. Folder-only by default, git optional.</p>
         </div>
         <div class="skill">
-          <code>/oagp-onboard</code>
-          <p>Join an already-OAGP-shaped organization as a fresh AI peer. Session-cycle start.</p>
+          <span class="cat">Session</span>
+          <code>/og-orient</code>
+          <p>Read-only come-up-to-speed on an OG-shaped org; emits the snapshot.</p>
         </div>
         <div class="skill">
-          <code>/oagp-closeout</code>
-          <p>Wrap a working session. Session-cycle end; companion to <code>/oagp-onboard</code>.</p>
+          <span class="cat">Session</span>
+          <code>/og-claim-seat</code>
+          <p>Take a position — the PO-authorized staffing act.</p>
+        </div>
+        <div class="skill">
+          <span class="cat">Session</span>
+          <code>/og-closeout</code>
+          <p>Wrap a working session: closeout memo + transcript-save prompt.</p>
+        </div>
+        <div class="skill">
+          <span class="cat">Operations</span>
+          <code>/og-snapshot</code>
+          <p>Current-state view: identity + staffing + recent-activity digest.</p>
+        </div>
+        <div class="skill">
+          <span class="cat">Operations</span>
+          <code>/og-add-position</code>
+          <p>Propose a new position — a Director-ratified org-chart change.</p>
         </div>
       </div>
-      <p>Together: <code>/oagp-bootstrap</code> or <code>/oagp-init</code> founds an org; <code>/oagp-onboard</code> and <code>/oagp-closeout</code> bracket each session in it.</p>
-      <p><strong>One-command install:</strong> <a href="https://github.com/oagp-org/oagp/blob/main/install/install-claude-code-skills.ps1">install-claude-code-skills.ps1</a> (Windows) or <a href="https://github.com/oagp-org/oagp/blob/main/install/install-claude-code-skills.sh">install-claude-code-skills.sh</a> (Mac/Linux).</p>
+      <p><strong>One-command install:</strong> <a href="https://github.com/ogframework/og/blob/main/install/install-claude-code-skills.ps1">install-claude-code-skills.ps1</a> (Windows) or <a href="https://github.com/ogframework/og/blob/main/install/install-claude-code-skills.sh">install-claude-code-skills.sh</a> (Mac/Linux).</p>
     </section>
 
     <section class="section">
       <h2>How to engage</h2>
-      <p>OAGP is multi-runtime by design. Pick the access path for your AI.</p>
+      <p>OG is multi-runtime by design. Pick the access path for your AI.</p>
       <table class="engage-table">
         <thead>
           <tr><th scope="col">Runtime</th><th scope="col">How</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>Claude Code</strong></td><td>Install canonical skills (above); read <code>org/</code> and <code>memos/</code> from any OAGP-shaped repo directly.</td></tr>
-          <tr><td><strong>AI with MCP</strong></td><td>Connect to <code>oagp.org/mcp</code> (forward work per v0.2; per-spec namespaced tools; read-only convenience cache; canonical content stays in repos).</td></tr>
-          <tr><td><strong>AI with web access (any runtime)</strong></td><td>Fetch <a href="/primer.md"><code>oagp.org/primer.md</code></a> — concise self-onboarding primer. Also: <a href="/llms.txt"><code>oagp.org/llms.txt</code></a> at site root for canonical-content discovery.</td></tr>
-          <tr><td><strong>Direct clone</strong></td><td><code>git clone https://github.com/oagp-org/oagp.git</code> — charter, CLAUDE.md, memos, proposals, decisions, skills.</td></tr>
+          <tr><td><strong>Claude Code</strong></td><td>Install canonical skills (above); read <code>org/</code> and <code>memos/</code> from any OG-shaped repo directly.</td></tr>
+          <tr><td><strong>AI with MCP</strong></td><td>Connect to <code>ogframework.com/mcp</code> (forward work per v0.2; per-spec namespaced tools; read-only convenience cache; canonical content stays in repos).</td></tr>
+          <tr><td><strong>AI with web access (any runtime)</strong></td><td>Fetch <a href="/primer.md"><code>ogframework.com/primer.md</code></a> — concise self-onboarding primer. Also: <a href="/llms.txt"><code>ogframework.com/llms.txt</code></a> at site root for canonical-content discovery.</td></tr>
+          <tr><td><strong>Direct clone</strong></td><td><code>git clone https://github.com/ogframework/og.git</code> — charter, CLAUDE.md, memos, proposals, decisions, skills.</td></tr>
         </tbody>
       </table>
     </section>
 
     <section class="section">
-      <h2>Three claims OAGP makes</h2>
+      <h2>Three claims OG makes</h2>
       <div class="pillars">
         <div class="pillar">
           <h3>Structured</h3>
-          <p>The pattern is explicit. Roles, positions, relationships, memos, decisions — each has a schema, a conformance suite, and reference fixtures. Nothing is left to tribal knowledge.</p>
+          <p>The framework is explicit. Roles, positions, relationships, memos, decisions — each has a schema, a conformance suite, and reference fixtures. Nothing is left to tribal knowledge.</p>
         </div>
         <div class="pillar">
           <h3>Open</h3>
-          <p>MIT-licensed; no vendor owns OAGP or any spec; anyone can publish a library at any URL. The conformance suite <em>is</em> the standard. All AI runtimes are equal citizens.</p>
+          <p>MIT-licensed; no vendor owns OG or any spec; anyone can publish a library at any URL. The conformance suite <em>is</em> the standard. All AI runtimes are equal citizens.</p>
         </div>
         <div class="pillar">
           <h3>Empirical</h3>
@@ -262,16 +282,16 @@
     <section class="section">
       <h2>Status</h2>
       <ul>
-        <li><strong>OAGP pattern.</strong> Charter at v0.1.4 (recursive self-describing <code>orgdef:Organization</code>). Adoption-cycle skills canonical (<code>/oagp-bootstrap</code>, <code>/oagp-onboard</code>, <code>/oagp-closeout</code>). Family-level MCP at <code>oagp.org/mcp</code> is forward work per <a href="https://github.com/oagp-org/oagp/blob/main/decisions/proposal-canonical-adoption-cycle-skill-distribution-v0.2.md">v0.2 distribution decision</a>; Claude Code plugin packaging is scheduled (v0.3) after MCP per cross-vendor red line ordering.</li>
+        <li><strong>OG framework.</strong> Charter at v0.2.1 (recursive self-describing <code>orgdef:Organization</code>). Seven canonical skills (Genesis: <code>/og-adopt</code>, <code>/og-create</code>; Session: <code>/og-orient</code>, <code>/og-claim-seat</code>, <code>/og-closeout</code>; Operations: <code>/og-snapshot</code>, <code>/og-add-position</code>). Eight canonical <code>recommended_patterns</code>. agent-sdk bind() v0.1 ratified; v0.2 autonomous-dispatch governance core built + propose-only demo validated. Family-level MCP at <code>ogframework.com/mcp</code> is forward work per the v0.2 distribution decision; Claude Code plugin packaging is scheduled (v0.3) after MCP per cross-vendor red line ordering.</li>
         <li><strong>Specs.</strong> catdef, roledef, orgdef, memodef all live with canonical libraries, conformance fixtures, and reference implementations on real AI runtimes.</li>
-        <li><strong>Empirical references.</strong> <a href="https://github.com/scottconfusedgorilla/thingalog">thingalog</a> is the originating empirical reference (catdef family co-evolved with thingalog as application context). <a href="https://github.com/oagp-org/oagp">oagp-org/oagp</a> itself is a recursive self-instance — the OAGP pattern describes its own organization using its own pattern.</li>
-        <li><strong>History.</strong> Renamed from AIGP to OAGP on 2026-05-01. Three OAGP-internal -defs consolidated under <a href="https://github.com/oagp-org">oagp-org GitHub org</a> on 2026-05-24; catdef stays standalone at <a href="https://github.com/catdef-spec/catdef">catdef-spec</a> as substrate-agnostic spec.</li>
+        <li><strong>Empirical references.</strong> <a href="https://github.com/scottconfusedgorilla/thingalog">thingalog</a> is the originating empirical reference (catdef family co-evolved with thingalog as application context; "Thingalog led to OG"). <a href="https://github.com/ogframework/og">ogframework/og</a> itself is a recursive self-instance — the OG framework describes its own organization using its own framework.</li>
+        <li><strong>History.</strong> AIGP → OAGP (2026-05-01) → <strong>OG (Open Governance Framework)</strong> (2026-06-01). Three OG-internal -defs consolidated under the <a href="https://github.com/ogframework">ogframework GitHub org</a> (2026-05-24; renamed from oagp-org 2026-06-01); catdef stays standalone at <a href="https://github.com/catdef-spec/catdef">catdef-spec</a> as substrate-agnostic spec.</li>
       </ul>
     </section>
   </main>
   <footer class="footer">
-    <span>OAGP is an open standard family, licensed under MIT.</span>
-    <span class="build-number">build 006</span>
+    <span>OG is an open standard family, licensed under MIT.</span>
+    <span class="build-number">build 007</span>
   </footer>
 </body>
 </html>
