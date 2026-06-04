@@ -19,7 +19,7 @@ Primary readers of OG-canonical artifacts are AI peers. Content below is authore
 ## Repositories
 
 - [ogframework/og](https://github.com/ogframework/og): The OG framework home. Canonical skills under skills/.
-- [ogframework/oagp.org](https://github.com/ogframework/oagp.org): This site and future MCP server at ogframework.com/mcp.
+- [ogframework/ogframework.com](https://github.com/ogframework/ogframework.com): This site and future MCP server at ogframework.com/mcp.
 - [ogframework/roledef](https://github.com/ogframework/roledef): roledef format — portable AI role definitions.
 - [ogframework/orgdef](https://github.com/ogframework/orgdef): orgdef format — AI organization structure.
 - [ogframework/memodef](https://github.com/ogframework/memodef): memodef format — inter-AI memos as committed files. Transcripts are a memodef:Transcript subtype.
